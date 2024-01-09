@@ -1,0 +1,55 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter gopher-gui dev",
+    "build": "node ./scripts/build",
+    "build:lib": "pnpm --filter lcui-cli build:components && pnpm --filter lcui-cli generate:theme",
+    "build:docs": "pnpm --filter gopher-gui docs:build",
+    "release": "pnpm --filter lcui-cli release",
+    "changelog": "pnpm --filter lcui-cli changelog",
+    "test": "pnpm --filter gopher-gui test",
+    "coverage": "pnpm --filter gopher-gui coverage",
+    "lint": "pnpm run lint:script && pnpm run lint:style",
+    "lint:script": "eslint --ext \"packages/**/*.{vue,js,jsx,ts,tsx}\" --fix --quiet ./",
+    "lint:style": "stylelint --fix \"packages/**/*.{css,scss}\"",
+    "postinstall": "husky install",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@ls-lint/ls-lint": "^1.11.2",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "commitlint": "^17.0.3",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.6.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-prettier": "^2.0.0"
+  },
+  "lint-staged": {
+    "packages/**/*.{vue,js,jsx,ts,tsx}": [
+      "npm run lint:script",
+      "git add ."
+    ],
+    "packages/**/*.{css,scss,less}": [
+      "npm run lint:style",
+      "git add ."
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lcui-cli": "^1.0.0",
+    "shelljs": "^0.8.5",
+    "vitepress": "1.0.0-alpha.10"
+  }
+}

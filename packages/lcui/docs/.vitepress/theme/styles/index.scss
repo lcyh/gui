@@ -1,0 +1,21 @@
+@use 'vars.css';
+@use 'demo-block';
+
+.body {
+  color: #3c3c43;
+}
+.dark {
+  body {
+    color: rgba(255, 255, 255);
+    background-color: #1e1e20;
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h5 {
+      color: rgba(255, 255, 255);
+    }
+  }
+}
