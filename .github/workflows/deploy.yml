@@ -30,7 +30,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install deps
-        run: pnpm install --frozen-lockfile
+        run: pnpm install 
 
       - name: Build lib
         run: pnpm docs:lib
