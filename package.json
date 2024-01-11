@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "pnpm --filter gopher-gui dev",
     "build": "node ./scripts/build",
-    "build:lib": "pnpm --filter lcui-cli build:components && pnpm --filter lcui-cli generate:theme",
+    "build:lib": "pnpm --filter lcui-cli prebuild &&  pnpm --filter lcui-cli build:components && pnpm --filter lcui-cli generate:theme",
     "build:docs": "pnpm --filter gopher-gui docs:build",
     "release": "pnpm --filter lcui-cli release",
     "changelog": "pnpm --filter lcui-cli changelog",

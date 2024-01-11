@@ -1,19 +1,19 @@
 const path = require('path');
 const shell = require('shelljs');
 
-const runBuild = async ()=>{
+const runBuild = async () => {
   try {
     await shell.mkdir('-p', 'dist');
     // await shell.exec('pnpm --filter gopher-gui docs:build');
     await shell.cp(
       '-R',
-      path.resolve(__dirname, '../packages/lcui/docs/.vitepress/dist/*'),
-      path.resolve(path.resolve(process.cwd(),'dist'))
+      './packages/lcui/docs/.vitepress/dist/*',
+      path.resolve(path.resolve(process.cwd(), 'dist'))
     );
     console.log('vite build success...');
   } catch (error) {
     console.log('vite build error:\n' + error);
-    process.exit(1)
+    process.exit(1);
   }
-}
-runBuild()
+};
+runBuild();

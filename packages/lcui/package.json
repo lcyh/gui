@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "predev": "node ../cli/index.js create -t lcui --ignore-parse-error && node ../cli/index.js generate:theme",
-    "docs:build": "vitepress build docs",
+    "docs:build": "pnpm predev && vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "register:components": "vitepress-rc",
     "test": "vitest",
