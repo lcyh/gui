@@ -4,7 +4,7 @@ import sidebar from './sidebar';
 import packageJson from '../../../package.json';
 
 export default ({ mode }) => {
-  const basePath = mode === 'development' ? '/' : '/lc-ui/';
+  const basePath = mode === 'development' ? '/' : '/gui/';
 
   return {
     base: basePath,
