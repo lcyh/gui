@@ -32,12 +32,6 @@ jobs:
       - name: Install deps
         run: pnpm install
 
-      - name: Build lib
-        run: pnpm docs:lib
-
-      - name: Build docs
-        run: pnpm docs:build
-
       - name: Build
         run: pnpm build
 
