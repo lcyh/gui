@@ -1,0 +1,32 @@
+import{a4 as n,_ as h,E as d,c as m,H as F,C as i,A as t,a as e,S as B,o as A}from"./chunks/framework.32362502.js";const{defineComponent:E}=n,_=E({name:"component-doc",components:{"render-demo-0":function(){const{toDisplayString:l,createTextVNode:a,resolveComponent:r,withCtx:c,openBlock:u,createBlock:p}=n;function s(y,N){const C=r("g-antd-btn");return u(),p(C,{type:"primary"},{default:c(()=>[a(l(y.msg),1)]),_:1})}const{defineComponent:o}=n,D=o({setup(){return{msg:"ant-design按钮"}}});return{render:s,...D}}()}}),V=JSON.parse('{"title":"antd-btn","description":"","frontmatter":{},"headers":[],"relativePath":"components/antd-btn/index.md","filePath":"components/antd-btn/index.md","lastUpdated":1712804998000}'),b=t("h1",{id:"antd-btn",tabindex:"-1"},[e("antd-btn "),t("a",{class:"header-anchor",href:"#antd-btn","aria-label":'Permalink to "antd-btn"'},"​")],-1),f=t("p",null,"基于 ant-design-vue 的 button 组件,做二次封装参考示例",-1),g=t("h2",{id:"基本用法",tabindex:"-1"},[e("基本用法 "),t("a",{class:"header-anchor",href:"#基本用法","aria-label":'Permalink to "基本用法"'},"​")],-1),x=t("div",{class:"language-vue"},[t("pre",{"v-pre":"",class:"shiki material-theme-palenight"},[t("code",null,[t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"<"),t("span",{style:{color:"#F07178"}},"template"),t("span",{style:{color:"#89DDFF"}},">")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#A6ACCD"}},"  "),t("span",{style:{color:"#89DDFF"}},"<"),t("span",{style:{color:"#F07178"}},"g-antd-btn"),t("span",{style:{color:"#89DDFF"}}," "),t("span",{style:{color:"#C792EA"}},"type"),t("span",{style:{color:"#89DDFF"}},"="),t("span",{style:{color:"#89DDFF"}},'"'),t("span",{style:{color:"#C3E88D"}},"primary"),t("span",{style:{color:"#89DDFF"}},'"'),t("span",{style:{color:"#89DDFF"}},">"),t("span",{style:{color:"#A6ACCD"}},"{{ msg }}"),t("span",{style:{color:"#89DDFF"}},"</"),t("span",{style:{color:"#F07178"}},"g-antd-btn"),t("span",{style:{color:"#89DDFF"}},">")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"</"),t("span",{style:{color:"#F07178"}},"template"),t("span",{style:{color:"#89DDFF"}},">")]),e(`
+`),t("span",{class:"line"}),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"<"),t("span",{style:{color:"#F07178"}},"script"),t("span",{style:{color:"#89DDFF"}},">")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF","font-style":"italic"}},"import"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#89DDFF"}},"{"),t("span",{style:{color:"#F07178"}}," "),t("span",{style:{color:"#A6ACCD"}},"defineComponent"),t("span",{style:{color:"#F07178"}}," "),t("span",{style:{color:"#89DDFF"}},"}"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#89DDFF","font-style":"italic"}},"from"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#89DDFF"}},"'"),t("span",{style:{color:"#C3E88D"}},"vue"),t("span",{style:{color:"#89DDFF"}},"'"),t("span",{style:{color:"#89DDFF"}},";")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF","font-style":"italic"}},"export"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#89DDFF","font-style":"italic"}},"default"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#82AAFF"}},"defineComponent"),t("span",{style:{color:"#A6ACCD"}},"("),t("span",{style:{color:"#89DDFF"}},"{")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#A6ACCD"}},"  "),t("span",{style:{color:"#F07178"}},"setup"),t("span",{style:{color:"#89DDFF"}},"()"),t("span",{style:{color:"#A6ACCD"}}," "),t("span",{style:{color:"#89DDFF"}},"{")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#F07178"}},"    "),t("span",{style:{color:"#89DDFF","font-style":"italic"}},"return"),t("span",{style:{color:"#F07178"}}," "),t("span",{style:{color:"#89DDFF"}},"{")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#F07178"}},"      msg"),t("span",{style:{color:"#89DDFF"}},":"),t("span",{style:{color:"#F07178"}}," "),t("span",{style:{color:"#89DDFF"}},"'"),t("span",{style:{color:"#C3E88D"}},"ant-design按钮"),t("span",{style:{color:"#89DDFF"}},"'")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#F07178"}},"    "),t("span",{style:{color:"#89DDFF"}},"};")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#F07178"}},"  "),t("span",{style:{color:"#89DDFF"}},"}")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"}"),t("span",{style:{color:"#A6ACCD"}},")"),t("span",{style:{color:"#89DDFF"}},";")]),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"</"),t("span",{style:{color:"#F07178"}},"script"),t("span",{style:{color:"#89DDFF"}},">")]),e(`
+`),t("span",{class:"line"}),e(`
+`),t("span",{class:"line"},[t("span",{style:{color:"#89DDFF"}},"<"),t("span",{style:{color:"#F07178"}},"style"),t("span",{style:{color:"#89DDFF"}},"></"),t("span",{style:{color:"#F07178"}},"style"),t("span",{style:{color:"#89DDFF"}},">")])])])],-1),k=B('<h2 id="参数" tabindex="-1">参数 <a class="header-anchor" href="#参数" aria-label="Permalink to &quot;参数&quot;">​</a></h2><table><thead><tr><th>参数</th><th>类型</th><th>默认</th><th>说明</th></tr></thead><tbody><tr><td>type</td><td>primary ghost dashed link text default</td><td>default</td><td>设置按钮类型</td></tr><tr><td>size</td><td>large middle small</td><td>middle</td><td>设置按钮大小</td></tr><tr><td>icon</td><td>v-slot</td><td>-</td><td>设置按钮的图标类型</td></tr></tbody></table><h2 id="事件" tabindex="-1">事件 <a class="header-anchor" href="#事件" aria-label="Permalink to &quot;事件&quot;">​</a></h2><table><thead><tr><th>事件</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>click</td><td>(event) =&gt; void</td><td>点击按钮时的回调</td></tr></tbody></table><h2 id="方法" tabindex="-1">方法 <a class="header-anchor" href="#方法" aria-label="Permalink to &quot;方法&quot;">​</a></h2><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>blur()</td><td>移除焦点</td></tr><tr><td>focus()</td><td>获取焦点</td></tr></tbody></table>',6);function v(l,a,r,c,u,p){const s=d("render-demo-0"),o=d("demo");return A(),m("div",null,[b,f,g,F(o,{customClass:"undefined",sourceCode:`<template>
+  <g-antd-btn type="primary">{{ msg }}</g-antd-btn>
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+export default defineComponent({
+  setup() {
+    return {
+      msg: 'ant-design按钮'
+    };
+  }
+});
+<\/script>
+
+<style></style>
+`},{highlight:i(()=>[x]),default:i(()=>[F(s)]),_:1}),k])}const q=h(_,[["render",v]]);export{V as __pageData,q as default};
