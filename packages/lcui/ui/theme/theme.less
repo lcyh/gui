@@ -1,0 +1,146 @@
+@component-background: var(--component-background, #fff);
+@border-color-base: var(--border-color-base, #e8ecef);
+@text-color: var(--text-color, rgba(0, 0, 0, 0.85));
+@text-color-secondary: var(--text-color-secondary, rgba(0, 0, 0, 0.45));
+@g-global-bg: var(--g-global-bg, #f3f6f8);
+@g-global-bg-normal: var(--g-global-bg-normal, #ffffff);
+@g-base-bg: var(--g-base-bg, #ffffff);
+@g-base-bg-dark: var(--g-base-bg-dark, #333854);
+@g-sidebar-item-bg: var(--g-sidebar-item-bg, #f2f5fc);
+@g-brand: var(--g-brand, #5e7ce0);
+@g-brand-foil: var(--g-brand-foil, #859bff);
+@g-brand-hover: var(--g-brand-hover, #7693f5);
+@g-brand-active: var(--g-brand-active, #526ecc);
+@g-brand-active-focus: var(--g-brand-active-focus, #344899);
+@g-contrast: var(--g-contrast, #c7000b);
+@g-text: var(--g-text, #252b3a);
+@g-text-weak: var(--g-text-weak, #575d6c);
+@g-aide-text: var(--g-aide-text, #8a8e99);
+@g-aide-text-stress: var(--g-aide-text-stress, #575d6c);
+@g-placeholder: var(--g-placeholder, #8a8e99);
+@g-light-text: var(--g-light-text, #ffffff);
+@g-dark-text: var(--g-dark-text, #252b3a);
+@g-link: var(--g-link, #526ecc);
+@g-link-active: var(--g-link-active, #526ecc);
+@g-link-light: var(--g-link-light, #96adfa);
+@g-link-light-active: var(--g-link-light-active, #beccfa);
+@g-line: var(--g-line, #adb0b8);
+@g-dividing-line: var(--g-dividing-line, #dfe1e6);
+@g-block: var(--g-block, #ffffff);
+@g-area: var(--g-area, #f8f8f8);
+@g-danger: var(--g-danger, #f66f6a);
+@g-warning: var(--g-warning, #fac20a);
+@g-waiting: var(--g-waiting, #9faad7);
+@g-success: var(--g-success, #50d4ab);
+@g-info: var(--g-info, #5e7ce0);
+@g-initial: var(--g-initial, #e9edfa);
+@g-unavailable: var(--g-unavailable, #f5f5f6);
+@g-shadow: var(--g-shadow, rgba(0, 0, 0, 0.2));
+@g-light-shadow: var(--g-light-shadow, rgba(0, 0, 0, 0.1));
+@g-icon-text: var(--g-icon-text, #252b3a);
+@g-icon-bg: var(--g-icon-bg, #ffffff);
+@g-icon-fill: var(--g-icon-fill, #d3d5d9);
+@g-icon-fill-hover: var(--g-icon-fill-hover, #adb5ce);
+@g-icon-fill-active: var(--g-icon-fill-active, #5e7ce0);
+@g-icon-fill-active-hover: var(--g-icon-fill-active-hover, #526ecc);
+@g-form-control-line: var(--g-form-control-line, #adb0b8);
+@g-form-control-line-hover: var(--g-form-control-line-hover, #575d6c);
+@g-form-control-line-active: var(--g-form-control-line-active, #5e7ce0);
+@g-form-control-line-active-hover: var(
+  --g-form-control-line-active-hover,
+  #344899
+);
+@g-list-item-active-bg: var(--g-list-item-active-bg, #5e7ce0);
+@g-list-item-active-text: var(--g-list-item-active-text, #ffffff);
+@g-list-item-active-hover-bg: var(--g-list-item-active-hover-bg, #526ecc);
+@g-list-item-hover-bg: var(--g-list-item-hover-bg, #f2f5fc);
+@g-list-item-hover-text: var(--g-list-item-hover-text, #526ecc);
+@g-list-item-selected-bg: var(--g-list-item-selected-bg, #e9edfa);
+@g-list-item-strip-bg: var(--g-list-item-strip-bg, #f2f5fc);
+@g-disabled-bg: var(--g-disabled-bg, #f5f5f6);
+@g-disabled-line: var(--g-disabled-line, #dfe1e6);
+@g-disabled-text: var(--g-disabled-text, #adb0b8);
+@g-primary-disabled: var(--g-primary-disabled, #beccfa);
+@g-icon-fill-active-disabled: var(--g-icon-fill-active-disabled, #beccfa);
+@g-label-bg: var(--g-label-bg, #eef0f5);
+@g-connected-overlay-bg: var(--g-connected-overlay-bg, #ffffff);
+@g-connected-overlay-line: var(--g-connected-overlay-line, #526ecc);
+@g-fullscreen-overlay-bg: var(--g-fullscreen-overlay-bg, #ffffff);
+@g-feedback-overlay-bg: var(--g-feedback-overlay-bg, #464d6e);
+@g-feedback-overlay-text: var(--g-feedback-overlay-text, #dfe1e6);
+@g-embed-search-bg: var(--g-embed-search-bg, #f2f5fc);
+@g-embed-search-bg-hover: var(--g-embed-search-bg-hover, #eef0f5);
+@g-float-block-shadow: var(--g-float-block-shadow, rgba(94, 124, 224, 0.3));
+@g-highlight-overlay: var(--g-highlight-overlay, rgba(255, 255, 255, 0.8));
+@g-range-item-hover-bg: var(--g-range-item-hover-bg, #e9edfa);
+@g-primary: var(--g-primary, #0084f4);
+@g-primary-hover: var(--g-primary-hover, #7693f5);
+@g-primary-active: var(--g-primary-active, #344899);
+@g-contrast-hover: var(--g-contrast-hover, #d64a52);
+@g-contrast-active: var(--g-contrast-active, #b12220);
+@g-danger-line: var(--g-danger-line, #f66f6a);
+@g-danger-bg: var(--g-danger-bg, #ffeeed);
+@g-warning-line: var(--g-warning-line, #fa9841);
+@g-warning-bg: var(--g-warning-bg, #fff3e8);
+@g-info-line: var(--g-info-line, #5e7ce0);
+@g-info-bg: var(--g-info-bg, #f2f5fc);
+@g-success-line: var(--g-success-line, #50d4ab);
+@g-success-bg: var(--g-success-bg, #edfff9);
+@g-primary-line: var(--g-primary-line, #5e7ce0);
+@g-primary-bg: var(--g-primary-bg, #f2f5fc);
+@g-default-line: var(--g-default-line, #5e7ce0);
+@g-default-bg: var(--g-default-bg, #f3f6f8);
+@g-font-size: var(--g-font-size, 14px);
+@g-font-size-card-title: var(--g-font-size-card-title, 14px);
+@g-font-size-page-title: var(--g-font-size-page-title, 16px);
+@g-font-size-modal-title: var(--g-font-size-modal-title, 18px);
+@g-font-size-price: var(--g-font-size-price, 20px);
+@g-font-size-data-overview: var(--g-font-size-data-overview, 24px);
+@g-font-size-icon: var(--g-font-size-icon, 16px);
+@g-font-size-sm: var(--g-font-size-sm, 12px);
+@g-font-size-md: var(--g-font-size-md, 12px);
+@g-font-size-lg: var(--g-font-size-lg, 14px);
+@g-font-title-weight: var(--g-font-title-weight, bold);
+@g-font-content-weight: var(--g-font-content-weight, normal);
+@g-line-height-base: var(--g-line-height-base, 1.5);
+@g-border-radius: var(--g-border-radius, 2px);
+@g-border-radius-feedback: var(--g-border-radius-feedback, 4px);
+@g-border-radius-card: var(--g-border-radius-card, 6px);
+@g-shadow-length-base: var(--g-shadow-length-base, 0 1px 4px 0);
+@g-shadow-length-slide-left: var(--g-shadow-length-slide-left, -2px 0 8px 0);
+@g-shadow-length-slide-right: var(--g-shadow-length-slide-right, 2px 0 8px 0);
+@g-shadow-length-connected-overlay: var(
+  --g-shadow-length-connected-overlay,
+  0 2px 8px 0
+);
+@g-shadow-length-hover: var(--g-shadow-length-hover, 0 4px 16px 0);
+@g-shadow-length-feedback-overlay: var(
+  --g-shadow-length-feedback-overlay,
+  0 4px 16px 0
+);
+@g-shadow-fullscreen-overlay: var(--g-shadow-fullscreen-overlay, 0 8px 40px 0);
+@g-animation-duration-slow: var(--g-animation-duration-slow, 300ms);
+@g-animation-duration-base: var(--g-animation-duration-base, 200ms);
+@g-animation-duration-fast: var(--g-animation-duration-fast, 100ms);
+@g-animation-ease-in: var(
+  --g-animation-ease-in,
+  cubic-bezier(0.5, 0, 0.84, 0.25)
+);
+@g-animation-ease-out: var(
+  --g-animation-ease-out,
+  cubic-bezier(0.16, 0.75, 0.5, 1)
+);
+@g-animation-ease-in-out: var(
+  --g-animation-ease-in-out,
+  cubic-bezier(0.5, 0.05, 0.5, 0.95)
+);
+@g-animation-ease-in-smooth: var(
+  --g-animation-ease-in-smooth,
+  cubic-bezier(0.645, 0.045, 0.355, 1)
+);
+@g-animation-linear: var(--g-animation-linear, cubic-bezier(0, 0, 1, 1));
+@g-z-index-full-page-overlay: var(--g-z-index-full-page-overlay, 1080);
+@g-z-index-pop-up: var(--g-z-index-pop-up, 1060);
+@g-z-index-dropdown: var(--g-z-index-dropdown, 1052);
+@g-z-index-modal: var(--g-z-index-modal, 1050);
+@g-z-index-drawer: var(--g-z-index-drawer, 1040);

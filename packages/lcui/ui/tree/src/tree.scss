@@ -1,0 +1,67 @@
+@import '../../style-var/index.scss';
+
+.#{$cls-prefix}-tree {
+  color: $g-text;
+
+  .#{$cls-prefix}-tree__node {
+    position: relative;
+    height: 30px;
+    line-height: 1.5;
+    color: $g-text-weak;
+    white-space: nowrap;
+  }
+
+  .#{$cls-prefix}-tree__node-content {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 6px;
+    font-size: $g-font-size;
+    cursor: pointer;
+    border-radius: $g-border-radius;
+
+    &.active {
+      text-decoration: none;
+      background-color: $g-list-item-selected-bg;
+      border-color: transparent;
+    }
+
+    &:not(.active):hover {
+      background-color: $g-list-item-hover-bg;
+      transition: background-color 0.5s;
+    }
+  }
+
+  .#{$cls-prefix}-tree__node-content--value-wrapper {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    overflow: hidden;
+
+    .#{$cls-prefix}-tree__node-loading {
+      margin-left: 50px;
+
+      .#{$cls-prefix}-loading-area {
+        background: none;
+      }
+    }
+  }
+  .#{$cls-prefix}-tree__node-title {
+    display: inline-block;
+    flex: 1;
+    max-width: 100%;
+    margin-left: 5px;
+    border: 1px dashed transparent;
+    border-radius: $g-border-radius;
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+
+    .#{$cls-prefix}-tree__match-highlight {
+      font-weight: bold;
+      color: $g-brand;
+    }
+  }
+}

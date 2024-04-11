@@ -1,0 +1,40 @@
+.DS_Store
+node_modules
+# dist
+dist-ssr
+**/lib
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.zip
+
+packages/lcui/ui/vue-lcui.ts
+packages/lcui/ui/theme/theme.scss
+packages/lcui/ui/theme/darkTheme.css
+packages/lcui/docs/.vitepress/config/sidebar.ts
+packages/lcui/docs/.vitepress/config/enSidebar.ts
+packages/lcui/docs/.vitepress/config.ts.js
+packages/lcui/build
+packages/lcui/docs/.vitepress/cache
+# **CHANGELOG.md
+# test
+packages/lcui/coverage
+packages/lcui/ui/**/__snapshots__
+.pnpm-debug.log
+node_modules

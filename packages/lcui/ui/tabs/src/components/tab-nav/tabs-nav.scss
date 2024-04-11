@@ -1,0 +1,531 @@
+@import '../../../../style-var/index.scss';
+
+$g-tab-options-bg: $g-brand-foil;
+$g-tab-slider-bg: $g-list-item-hover-bg;
+
+:host {
+  display: block;
+}
+
+.#{$cls-prefix}-tabs__nav {
+  padding-left: 0 !important;
+}
+.#{$cls-prefix}-tabs__nav--tabs,
+.#{$cls-prefix}-tabs__nav--pills {
+  font-size: $g-font-size;
+  list-style: none;
+  background: transparent;
+
+  li {
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    & a {
+      padding: 0;
+      line-height: 30px;
+      color: $g-aide-text;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+
+    & a:hover,
+    & a:focus,
+    & a:active {
+      outline: none;
+    }
+
+    &.disabled {
+      a {
+        color: $g-disabled-text;
+        cursor: not-allowed;
+      }
+    }
+
+    &.active,
+    &:hover:not(.disabled) {
+      & a {
+        color: $g-brand;
+      }
+    }
+  }
+
+  li::after {
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    content: '';
+    background: transparent;
+    transition: width $g-animation-duration-slow $g-animation-ease-in-out,
+      background-color $g-animation-duration-slow $g-animation-ease-in-out;
+  }
+
+  li.active::after {
+    width: 100%;
+    background: $g-brand;
+  }
+
+  .#{$cls-prefix}-tabs__new-tab {
+    padding: 2px 0 0;
+  }
+}
+
+.#{$cls-prefix}-tabs__nav--options {
+  width: fit-content;
+  padding: 2px;
+  background: $g-base-bg;
+  border: 1px solid $g-dividing-line;
+  border-radius: $g-border-radius;
+
+  & > li {
+    cursor: pointer;
+    background-color: $g-base-bg;
+    border-radius: $g-border-radius;
+    transition: background-color $g-animation-duration-slow
+        $g-animation-ease-in-out,
+      text-shadow $g-animation-duration-slow $g-animation-ease-in-out;
+
+    & span > a {
+      padding: 0 16px;
+      line-height: 26px;
+      color: $g-aide-text;
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    &.active {
+      background: $g-global-bg;
+
+      & span > a {
+        padding: 0 16px;
+        color: $g-brand;
+      }
+    }
+
+    &.disabled {
+      border-color: $g-disabled-line;
+
+      a {
+        color: $g-disabled-text;
+        cursor: not-allowed;
+      }
+    }
+
+    &.active,
+    &:hover:not(.disabled) {
+      & span > a {
+        &:hover {
+          color: $g-brand;
+          background: transparent;
+        }
+      }
+    }
+  }
+  .#{$cls-prefix}-tabs__close-btn {
+    margin-right: 12px;
+  }
+  .#{$cls-prefix}-tabs__new-tab {
+    padding: 2px 16px 0;
+  }
+}
+
+.#{$cls-prefix}-tabs__nav--slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  font-size: $g-font-size;
+  background: $g-tab-slider-bg;
+  border: none;
+  border-radius: $g-border-radius;
+
+  > li {
+    position: relative;
+    z-index: 1;
+    margin: 2px;
+    cursor: pointer;
+
+    &:first-child {
+      border-left-width: 1px;
+      border-radius: $g-border-radius 0 0 $g-border-radius;
+    }
+
+    &:last-child {
+      border-radius: 0 $g-border-radius $g-border-radius 0;
+    }
+
+    & a {
+      padding: 0 16px;
+      line-height: 28px;
+      color: $g-aide-text;
+      cursor: pointer;
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    &.disabled {
+      border-color: $g-disabled-line;
+
+      a {
+        color: $g-disabled-text;
+        cursor: not-allowed;
+      }
+    }
+
+    &.active,
+    &:hover:not(.disabled) {
+      & a {
+        color: $g-brand-active;
+
+        &:hover {
+          color: $g-brand-active;
+          background: transparent;
+        }
+      }
+    }
+
+    &.active {
+      text-shadow: 0 0 0.7px $g-brand;
+    }
+
+    &:hover:not(.active):not(.disabled) {
+      color: $g-brand-active;
+    }
+  }
+
+  .#{$cls-prefix}-tabs__close-btn {
+    margin-right: 12px;
+  }
+  .#{$cls-prefix}-tabs__new-tab {
+    padding: 2px 16px 0;
+  }
+}
+
+.#{$cls-prefix}-tabs__nav--wrapped {
+  font-size: $g-font-size;
+  background: transparent;
+  background-color: $g-base-bg;
+  border-bottom: 1px solid $g-dividing-line;
+
+  > li {
+    position: relative;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    & a {
+      color: $g-aide-text;
+      cursor: pointer;
+      border: none;
+      border-radius: $g-border-radius $g-border-radius 0 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    &.disabled {
+      border-color: $g-disabled-line;
+
+      a {
+        color: $g-disabled-text;
+        cursor: not-allowed;
+      }
+    }
+
+    &.active {
+      // 以下覆盖父元素的底部边框,解决多1px的边框造成的抖动
+      margin: -1px;
+      background: $g-global-bg;
+      border: 1px solid $g-dividing-line;
+      border-bottom-color: transparent;
+      border-radius: $g-border-radius $g-border-radius 0 0;
+
+      & a {
+        color: $g-brand-active;
+      }
+    }
+
+    &:hover:not(.active):not(.disabled) {
+      a {
+        color: $g-brand;
+      }
+    }
+  }
+}
+
+.#{$cls-prefix}-tabs__nav--tabs {
+  border-bottom: 1px $g-line solid;
+
+  li {
+    margin-bottom: -3px;
+    margin-left: 32px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.#{$cls-prefix}-tabs__nav--pills {
+  > li {
+    margin-left: 32px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.#{$cls-prefix}-tabs__nav {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  list-style: none;
+  user-select: none;
+  // 隐藏滚动条
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    a {
+      text-decoration: none;
+
+      &.custom-width {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &--right,
+  &--left {
+    margin: 0;
+    .#{$cls-prefix}-tabs__nav-slider-animation {
+      transition: top $g-animation-duration-slow $g-animation-ease-in-out,
+        height $g-animation-duration-slow $g-animation-ease-in-out;
+    }
+    .#{$cls-prefix}-tabs__new-tab {
+      text-align: center;
+    }
+  }
+
+  &--right {
+    display: block;
+    float: right;
+    margin-left: 10px;
+    border-bottom: none;
+
+    > li {
+      position: relative;
+      padding: 0 16px;
+      margin-left: 0;
+    }
+
+    > li::after {
+      display: none;
+    }
+
+    > li::before {
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 2px;
+      height: 0;
+      margin: auto;
+      content: ' ';
+      background: transparent;
+      transition: height $g-animation-duration-slow $g-animation-ease-in-out,
+        background-color $g-animation-duration-slow $g-animation-ease-in-out;
+    }
+
+    > li.active::before {
+      height: 100%;
+      background: $g-brand;
+    }
+  }
+
+  &--left {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    border-bottom: none;
+
+    > li {
+      position: relative;
+      padding: 0 16px;
+      margin-left: 0;
+    }
+
+    > li::after {
+      position: absolute;
+      top: 0;
+      right: -5px;
+      width: 2px;
+      height: 0;
+      margin: auto;
+      content: ' ';
+      background: transparent;
+      transition: height $g-animation-duration-slow $g-animation-ease-in-out,
+        background-color $g-animation-duration-slow $g-animation-ease-in-out;
+    }
+
+    > li.active::after {
+      width: 2px;
+      height: 100%;
+      background: $g-brand;
+    }
+  }
+}
+
+.#{$cls-prefix}-tabs__nav-content {
+  display: flex;
+  align-items: center;
+  font-size: $g-font-size;
+}
+
+.#{$cls-prefix}-tabs__nav--options {
+  padding-left: 2px;
+}
+
+.#{$cls-prefix}-tabs__nav-slider-animation {
+  position: absolute;
+  top: 1px;
+  z-index: 0;
+  height: 30px;
+  background-color: $g-base-bg;
+  border-radius: $g-border-radius;
+  box-shadow: 0 2px 4px 0 $g-light-shadow;
+  transition: left $g-animation-duration-slow $g-animation-ease-in-out,
+    width $g-animation-duration-slow $g-animation-ease-in-out;
+}
+
+.#{$cls-prefix}-tabs {
+  &__new-tab,
+  &__close-btn {
+    .#{$cls-prefix}-icon__container {
+      &:hover {
+        color: $g-text;
+      }
+
+      > i {
+        transition: none;
+      }
+    }
+  }
+
+  &__new-tab {
+    .#{$cls-prefix}-icon__container {
+      color: $g-aide-text;
+    }
+  }
+
+  &__close-btn {
+    margin-left: 8px;
+    color: $g-form-control-line;
+    .#{$cls-prefix}-icon__container {
+      color: $g-form-control-line;
+    }
+  }
+
+  &--right,
+  &--left {
+    .#{$cls-prefix}-tabs__nav--options,
+    .#{$cls-prefix}-tabs__nav--wrapped {
+      border-bottom: 1px solid $g-dividing-line;
+
+      > li::after {
+        display: none;
+      }
+
+      > li::before {
+        display: none;
+      }
+    }
+    .#{$cls-prefix}-tabs__nav--wrapped {
+      border-bottom: none;
+
+      > li {
+        padding: 8px 16px;
+      }
+    }
+    .#{$cls-prefix}-tabs__nav--slider {
+      > li::after {
+        display: none;
+      }
+
+      > li::before {
+        display: none;
+      }
+    }
+    .#{$cls-prefix}-tabs__nav--slider {
+      .#{$cls-prefix}-tabs__nav-slider-animation {
+        left: 1px;
+      }
+    }
+  }
+
+  &--right {
+    .#{$cls-prefix}-tabs__nav--wrapped {
+      border-left: 1px solid $g-dividing-line;
+
+      > li {
+        & a {
+          border-radius: 0 $g-border-radius $g-border-radius 0;
+        }
+
+        &.active {
+          border-bottom-color: $g-dividing-line;
+          border-left-color: transparent;
+          border-radius: 0 $g-border-radius $g-border-radius 0;
+        }
+      }
+    }
+
+    .#{$cls-prefix}-tabs__nav--tabs {
+      border-left: 1px solid $g-line;
+    }
+  }
+
+  &--left {
+    .#{$cls-prefix}-tabs__nav--wrapped {
+      border-right: 1px solid $g-dividing-line;
+
+      > li {
+        & a {
+          border-radius: $g-border-radius 0 0 $g-border-radius;
+        }
+
+        &.active {
+          border-right-color: transparent;
+          border-bottom-color: $g-dividing-line;
+          border-radius: $g-border-radius 0 0 $g-border-radius;
+        }
+      }
+    }
+
+    .#{$cls-prefix}-tabs__nav--tabs {
+      border-right: 1px solid $g-line;
+    }
+  }
+}

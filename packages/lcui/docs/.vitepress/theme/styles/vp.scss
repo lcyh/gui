@@ -1,0 +1,84 @@
+// vitepress
+:root {
+  --vp-c-brand: #5e7ce0;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #bd34fe 30%,
+    #41d1ff
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #f56a92 50%,
+    #61c4ec 50%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+  --g-sidebar-item-bg: #f2f5fc;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+.VPButton.brand {
+  border-color: #7693f5 !important;
+  background-color: var(--vp-c-brand);
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-c-brand) !important;
+  opacity: 0.7;
+}
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+.vp-doc table {
+  width: 100%;
+  display: table;
+}
+
+.VPNav {
+  border-bottom: 1px solid var(--g-dividing-line, #f2f2f3) !important;
+  .curtain {
+    &::before {
+      background: none !important;
+    }
+  }
+  .VPNavBarTitle.has-sidebar .title {
+    border-bottom: none;
+  }
+}
+
+.VPNavBar {
+  .container > .title {
+    background-color: var(--component-background, #fff) !important;
+  }
+}
+.VPSidebar {
+  background-color: var(--component-background) !important;
+  border-right: 1px solid var(--g-dividing-line, #f2f2f3);
+  .curtain {
+    background-color: var(--component-background) !important;
+  }
+  .VPSidebarItem {
+    .VPLink {
+      padding: 0.35rem 1.5rem 0.35rem 1.5rem;
+    }
+    &.is-active {
+      .VPLink {
+        background-color: var(--g-sidebar-item-bg);
+        border-radius: 100px;
+      }
+    }
+  }
+}

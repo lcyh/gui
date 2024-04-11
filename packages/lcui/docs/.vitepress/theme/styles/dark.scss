@@ -1,0 +1,138 @@
+// 组件
+.dark {
+  $color: #c9d1d9;
+  $disalbeColor: rgba(255, 255, 255, 0.3);
+  $primary-color: #0084f4;
+  body {
+    color: #fff;
+    background-color: var(--component-background);
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h5 {
+      color: #fff;
+    }
+  }
+  .ant-input {
+    color: $color;
+    background-color: transparent;
+    border: 1px solid $color;
+  }
+  // .ant-btn,
+  .ant-input-group-addon {
+    background-color: transparent;
+    background: transparent;
+    border-color: var(--border-color-base);
+    color: $color;
+    &[disabled],
+    &:hover {
+      color: $color;
+      background-color: $disalbeColor;
+    }
+    &[disabled]:hover {
+      color: $color;
+      background-color: $disalbeColor;
+    }
+  }
+  .ant-btn {
+    border: 1px solid transparent;
+    color: #c9d1d9;
+    border-color: var(--border-color-base);
+    background: 0 0;
+  }
+  .ant-btn-primary {
+    color: #fff;
+    border-color: $primary-color;
+    background: $primary-color;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  }
+  .ant-modal-content {
+    background-color: var(--component-background);
+  }
+  .ant-modal-header {
+    color: var(--text-color);
+    background: var(--component-background);
+    border-bottom: 1px solid var(--border-color-base);
+  }
+  .ant-modal-close {
+    color: var(--text-color);
+    background: 0 0;
+  }
+  .ant-modal-footer {
+    background: 0 0;
+    border-top: 1px solid var(--border-color-base);
+  }
+  .ant-card {
+    background: var(--component-background);
+    color: var(--text-color) !important;
+  }
+  .ant-card-bordered {
+    border: 1px solid var(--border-color-base);
+  }
+  .ant-table {
+    color: var(--text-color);
+    background: var(--component-background);
+  }
+  .ant-card-head {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color-base);
+  }
+  .ant-table-tbody > tr > td,
+  .ant-table-thead > tr > th {
+    border-bottom: 1px solid var(--border-color-base) !important;
+    background: var(--component-background);
+    color: var(--text-color);
+  }
+
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: var(--component-background);
+    color: var(--text-color);
+  }
+  .ant-table-pagination {
+    li,
+    .ant-pagination-item-link {
+      background: var(--component-background);
+      color: #fff;
+      a,
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .ant-pagination-options {
+    .ant-select-selector {
+      background: var(--component-background);
+    }
+  }
+  .ant-descriptions,
+  .ant-descriptions-bordered {
+    .ant-descriptions-row {
+      th,
+      td {
+        border: 1px solid var(--border-color-base);
+      }
+    }
+    .ant-descriptions-view {
+      border: 1px solid var(--border-color-base) !important;
+    }
+
+    .ant-descriptions-item-label {
+      background-color: var(--component-background);
+    }
+    .ant-descriptions-item-label,
+    .ant-descriptions-item-content {
+      color: var(--text-color);
+    }
+  }
+  .ant-drawer-header {
+    color: var(--text-color);
+    background: var(--component-background);
+    border-bottom: 1px solid var(--border-color-base);
+    .ant-drawer-close {
+      color: var(--text-color);
+    }
+  }
+}

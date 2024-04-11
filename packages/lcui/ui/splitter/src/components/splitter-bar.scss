@@ -1,0 +1,233 @@
+@import '../../../style-var/index.scss';
+
+.#{$cls-prefix}-splitter__bar {
+  position: relative;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: $g-dividing-line;
+
+  .#{$cls-prefix}-splitter__collapse {
+    position: absolute;
+    z-index: 15;
+    cursor: pointer;
+    background-color: $g-dividing-line;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 2px;
+      content: '';
+      background: #ffffff;
+    }
+
+    &:hover {
+      background-color: $g-brand-hover;
+    }
+  }
+
+  &--horizontal {
+    .#{$cls-prefix}-splitter__collapse {
+      width: 12px;
+      height: 30px;
+
+      &.prev,
+      &.next {
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.prev {
+        left: 100%;
+        border-radius: 0 $g-border-radius-feedback $g-border-radius-feedback 0;
+
+        &::before,
+        &.collapsed::before {
+          top: 9px;
+          left: 1px;
+        }
+
+        &::before {
+          transform: rotate(-70deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(70deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 18px;
+          left: 1px;
+        }
+
+        &::after {
+          transform: rotate(70deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(-70deg);
+        }
+      }
+
+      &.next {
+        right: 100%;
+        border-radius: $g-border-radius-feedback 0 0 $g-border-radius-feedback;
+
+        &::before,
+        &.collapsed::before {
+          top: 9px;
+          right: 1px;
+        }
+
+        &::before {
+          transform: rotate(70deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(-70deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 18px;
+          right: 1px;
+        }
+
+        &::after {
+          transform: rotate(-70deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(70deg);
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    .#{$cls-prefix}-splitter__collapse {
+      width: 30px;
+      height: 12px;
+
+      &.prev,
+      &.next {
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.prev {
+        top: 100%;
+        border-radius: 0 0 $g-border-radius-feedback $g-border-radius-feedback;
+
+        &::before,
+        &.collapsed::before {
+          bottom: 5px;
+          left: 5px;
+        }
+
+        &::before {
+          transform: rotate(-20deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(20deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          bottom: 5px;
+          left: 14px;
+        }
+
+        &::after {
+          transform: rotate(20deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(-20deg);
+        }
+      }
+
+      &.next {
+        bottom: 100%;
+        border-radius: $g-border-radius-feedback $g-border-radius-feedback 0 0;
+
+        &::before,
+        &.collapsed::before {
+          top: 5px;
+          left: 5px;
+        }
+
+        &::before {
+          transform: rotate(20deg);
+        }
+
+        &.collapsed::before {
+          top: 5px;
+          left: 5px;
+          transform: rotate(-20deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 5px;
+          left: 14px;
+        }
+
+        &::after {
+          transform: rotate(-20deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(20deg);
+        }
+      }
+    }
+  }
+
+  &--horizontal.resizable:not(.none-resizable),
+  &--vertical.resizable:not(.none-resizable) {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $g-brand-hover;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 10;
+      display: block;
+      content: '';
+    }
+  }
+
+  &--horizontal.resizable {
+    // 修正IE浏览器，css伪元素中鼠标手型无效
+    cursor: col-resize;
+
+    &::after {
+      top: 0;
+      width: 10px;
+      height: 100%;
+      cursor: col-resize;
+    }
+  }
+
+  &--vertical.resizable {
+    cursor: row-resize;
+
+    &::after {
+      left: 0;
+      width: 100%;
+      height: 10px;
+      cursor: row-resize;
+    }
+  }
+}

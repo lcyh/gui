@@ -1,0 +1,78 @@
+{
+  "name": "lc-gui",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "lc-gui components based on Vite and Vue3",
+  "keywords": [
+    "frontend",
+    "typescript",
+    "ui-component",
+    "components",
+    "vue-components",
+    "vue",
+    "vue3",
+    "vite",
+    "jsx",
+    "lc-gui"
+  ],
+  "homepage": "https://lcyh.github.io/lc-ui/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lcyh/gui.git"
+  },
+  "main": "vue-lcui.umd.js",
+  "module": "vue-lcui.mjs",
+  "style": "style.css",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "predev": "node ../cli/index.js create -t lcui --ignore-parse-error && node ../cli/index.js generate:theme",
+    "docs:build": "pnpm predev && vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs",
+    "register:components": "vitepress-rc",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^2.2.1",
+    "@iconify/json": "^2.1.30",
+    "@purge-icons/generated": "^0.8.1",
+    "bpmn-js": "^9.4.0",
+    "cropperjs": "^1.6.1",
+    "lodash-es": "^4.17.21",
+    "resize-observer-polyfill": "^1.5.1",
+    "vite-plugin-purge-icons": "^0.9.2",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitest/coverage-c8": "^0.31.1",
+    "@vue/test-utils": "^2.3.2",
+    "@vueuse/core": "^10.1.2",
+    "ant-design-vue": "^3.2.0",
+    "c8": "^7.13.0",
+    "jsdom": "^22.0.0",
+    "less": "^4.1.2",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.1.0",
+    "vite-svg-loader": "^3.6.0",
+    "vitepress": "1.0.0-alpha.75",
+    "vitepress-theme-demoblock": "^2.0.2",
+    "vitest": "^0.31.0",
+    "vue-tsc": "^1.6.5"
+  },
+  "peerDependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
+    "@vueuse/core": "^10.1.2",
+    "ant-design-vue": "^3.2.0",
+    "dayjs": "^1.11.1",
+    "tinymce": "^5.10.3",
+    "vue": "^3.3.2",
+    "xlsx": "^0.18.5"
+  }
+}

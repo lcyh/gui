@@ -1,0 +1,14 @@
+@mixin ant-table-cell-border-bottom {
+  border-bottom: 1px solid #f0f0f0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.ant-table {
+  .ant-table-tbody,
+  .ant-table-thead {
+    .ant-table-cell {
+      @include ant-table-cell-border-bottom();
+    }
+  }
+}

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Format and submit code according to lintstagedrc.js configuration
+pnpm  lint

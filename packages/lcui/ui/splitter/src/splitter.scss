@@ -1,0 +1,16 @@
+@import '../../style-var/index.scss';
+.#{$cls-prefix}-splitter {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  border-radius: $g-border-radius;
+
+  &.#{$cls-prefix}-splitter--horizontal {
+    flex-direction: row;
+  }
+
+  &.#{$cls-prefix}-splitter--vertical {
+    flex-direction: column;
+  }
+}

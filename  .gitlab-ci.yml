@@ -1,0 +1,32 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+variables:
+  # 定义构建输出目录
+  BUILD_DIR: public
+
+build:
+  stage: build
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm run docs:build
+
+pages:
+  stage: deploy
+  script:
+    - rm -rf $BUILD_DIR
+    - mkdir $BUILD_DIR && cp -rf ./packages/lcui/docs/.vitepress/dist/* $BUILD_DIR
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - dev # 只有在 dev 分支推送代码时触发部署
+
+cache:
+  paths:
+    - node_modules
+    - dist

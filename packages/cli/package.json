@@ -1,0 +1,62 @@
+{
+  "name": "lcui-cli",
+  "version": "1.0.0",
+  "description": "lcui-cli",
+  "keywords": [
+    "cli"
+  ],
+  "author": "lc",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lcyh/gui.git"
+  },
+  "bin": {
+    "lcui-cli": "index.js"
+  },
+  "scripts": {
+    "build": "pnpm generate:theme && node --max-old-space-size=4096 node_modules/vitepress/bin/vitepress.js build docs",
+    "build:lib": "pnpm prebuild -e prod && pnpm generate:theme && pnpm build:components && pnpm changelog && pnpm release",
+    "build:components": "node ./index.js build",
+    "generate:theme": "node ./index.js generate:theme",
+    "generate:dts": "node ./index.js generate:dts",
+    "release": "node ./index.js release",
+    "cli": "node ./index.js create",
+    "cli:create": "node ./index.js create -t component",
+    "prebuild": "node ./index.js create -t lcui --ignore-parse-error",
+    "changelog": "conventional-changelog -k '../lcui/package.json' -p angular -i CHANGELOG.md -s"
+  },
+  "dependencies": {
+    "lcui-cli": "^1.0.0",
+    "lodash": "^4.17.21",
+    "vite-plugin-dts": "^2.0.2",
+    "vitepress": "1.0.0-alpha.10"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.21.8",
+    "@babel/traverse": "^7.21.5",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "chalk": "^4.1.2",
+    "commander": "^10.0.1",
+    "conventional-changelog-cli": "^2.2.2",
+    "esbuild": "^0.17.19",
+    "esbuild-register": "^3.4.2",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.5",
+    "kolorist": "^1.8.0",
+    "ora": "^5.4.1",
+    "rimraf": "^5.0.0",
+    "sass": "^1.62.1",
+    "shelljs": "^0.8.5",
+    "vite": "^4.3.5"
+  }
+}

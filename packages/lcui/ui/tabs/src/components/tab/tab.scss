@@ -1,0 +1,7 @@
+@import '../../../../style-var/index.scss';
+
+.#{$cls-prefix}-tab {
+  padding: 10px 0;
+  margin-top: 10px;
+  overflow: hidden;
+}
